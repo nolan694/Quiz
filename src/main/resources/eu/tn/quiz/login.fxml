@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="eu.tn.quiz.controller.LoginController" prefWidth="400" prefHeight="250">
+    <children>
+        <Label text="Nom d'utilisateur :" layoutX="50" layoutY="50"/>
+        <TextField fx:id="usernameField" layoutX="180" layoutY="45" prefWidth="150"/>
+
+        <Label text="Mot de passe :" layoutX="50" layoutY="100"/>
+        <PasswordField fx:id="passwordField" layoutX="180" layoutY="95" prefWidth="150"/>
+
+        <Button text="Se connecter" layoutX="150" layoutY="150" onAction="#handleLogin"/>
+
+        <Label fx:id="errorLabel" layoutX="100" layoutY="200" textFill="red"/>
+    </children>
+</AnchorPane>
