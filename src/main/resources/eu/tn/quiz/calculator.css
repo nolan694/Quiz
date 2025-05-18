@@ -1,0 +1,80 @@
+/* Operation Buttons */
+.operation-button {
+    -fx-background-color: linear-gradient(to bottom, #4776E6, #3a64d4);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-effect: dropshadow(gaussian, rgba(71,118,230,0.5), 10, 0.3, 0, 2);
+    -fx-cursor: hand;
+}
+
+.operation-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #3a64d4, #2d52b2);
+    -fx-effect: dropshadow(gaussian, rgba(71,118,230,0.7), 12, 0.4, 0, 3);
+}
+
+.operation-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #2d52b2, #1f4090);
+    -fx-translate-y: 1px;
+}
+
+/* Action Buttons */
+.action-button {
+    -fx-background-color: linear-gradient(to right, #4CAF50, #45a049);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 8 16;
+    -fx-effect: dropshadow(gaussian, rgba(76,175,80,0.5), 8, 0.3, 0, 2);
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: linear-gradient(to right, #45a049, #3d8b40);
+}
+
+/* Logout Button */
+.logout-button {
+    -fx-background-color: linear-gradient(to right, #e74c3c, #c0392b);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 8 16;
+    -fx-effect: dropshadow(gaussian, rgba(231,76,60,0.5), 8, 0.3, 0, 2);
+    -fx-cursor: hand;
+}
+
+.logout-button:hover {
+    -fx-background-color: linear-gradient(to right, #c0392b, #a5281b);
+}
+
+/* Table Styling */
+.styled-table .column-header {
+    -fx-background-color: linear-gradient(to bottom, #4776E6, #3a64d4);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.styled-table .table-row-cell:filled {
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.styled-table .table-row-cell:filled:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.styled-table .table-row-cell:filled:selected {
+    -fx-background-color: #e3f2fd;
+}
+
+.styled-table .table-cell {
+    -fx-padding: 8 12;
+    -fx-alignment: CENTER;
+}

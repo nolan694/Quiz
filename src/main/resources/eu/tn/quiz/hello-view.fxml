@@ -3,24 +3,80 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
 
-<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.tn.quiz.controller.CalculatorController">
+<?import java.lang.String?>
+<?import java.net.URL?>
+<VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="eu.tn.quiz.controller.CalculatorController"
+      style="-fx-background-color: linear-gradient(to bottom, #f5f7fa, #e4e8f0);">
+
   <padding>
-    <Insets top="20" right="20" bottom="20" left="20"/>
+    <Insets top="25" right="25" bottom="25" left="25"/>
   </padding>
 
-  <HBox spacing="10">
-    <TextField fx:id="number1Field" promptText="Nombre 1" />
-    <TextField fx:id="number2Field" promptText="Nombre 2" />
+  <!-- Title -->
+  <Label text="Calculatrice" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3a4a6d;">
+    <effect>
+      <DropShadow color="rgba(0,0,0,0.1)" radius="5" spread="0.5" />
+    </effect>
+  </Label>
+
+  <!-- Number Input Fields -->
+  <HBox spacing="15" alignment="CENTER">
+    <TextField fx:id="number1Field" promptText="Nombre 1"
+               style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #d1d9e6; -fx-border-width: 1.5; -fx-font-size: 14px; -fx-pref-height: 35; -fx-pref-width: 150;"
+               effect="$innerShadow"/>
+    <TextField fx:id="number2Field" promptText="Nombre 2"
+               style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #d1d9e6; -fx-border-width: 1.5; -fx-font-size: 14px; -fx-pref-height: 35; -fx-pref-width: 150;"
+               effect="$innerShadow"/>
   </HBox>
 
-  <HBox spacing="10">
-    <Button text="+" onAction="#handleAdd" />
-    <Button text="-" onAction="#handleSubtract" />
-    <Button text="×" onAction="#handleMultiply" />
-    <Button text="÷" onAction="#handleDivide" />
+  <!-- Operation Buttons -->
+  <HBox spacing="10" alignment="CENTER">
+    <Button text="+" onAction="#handleAdd" styleClass="operation-button" />
+    <Button text="-" onAction="#handleSubtract" styleClass="operation-button" />
+    <Button text="×" onAction="#handleMultiply" styleClass="operation-button" />
+    <Button text="÷" onAction="#handleDivide" styleClass="operation-button" />
   </HBox>
 
-  <Label text="Résultat :" />
-  <Label fx:id="resultLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+  <!-- Result Display -->
+  <VBox spacing="5" alignment="CENTER">
+    <Label text="Résultat :" style="-fx-font-size: 16px; -fx-text-fill: #5a6a8a;"/>
+    <Label fx:id="resultLabel" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3a4a6d; -fx-padding: 10 20; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #d1d9e6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.3, 0, 1);"/>
+  </VBox>
+
+  <!-- Message Label -->
+  <Label fx:id="messageLabel" style="-fx-text-fill: #2ecc71; -fx-font-weight: bold; -fx-font-size: 14px;" />
+
+  <!-- Action Buttons -->
+  <HBox spacing="15" alignment="CENTER">
+    <Button text="Voir Historique" onAction="#handleShowHistory" styleClass="action-button" />
+    <Button text="Déconnexion" onAction="#handleLogout" styleClass="logout-button" />
+  </HBox>
+
+  <!-- History Table -->
+  <TableView fx:id="historyTable" visible="false" prefHeight="200" prefWidth="450" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #d1d9e6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 2);">
+    <columns>
+      <TableColumn fx:id="dateColumn" text="Date" prefWidth="150" style="-fx-font-size: 13px; -fx-alignment: CENTER;"/>
+      <TableColumn fx:id="operationColumn" text="Opération" prefWidth="150" style="-fx-font-size: 13px; -fx-alignment: CENTER;"/>
+      <TableColumn fx:id="resultColumn" text="Résultat" prefWidth="150" style="-fx-font-size: 13px; -fx-alignment: CENTER;"/>
+    </columns>
+    <styleClass>
+      <String fx:value="styled-table" />
+    </styleClass>
+  </TableView>
+
+  <!-- Define effects -->
+  <effect>
+    <InnerShadow fx:id="innerShadow" color="rgba(0,0,0,0.1)" radius="3" />
+  </effect>
+
+  <!-- CSS Styling -->
+  <stylesheets>
+    <URL value="@calculator.css" />
+  </stylesheets>
 </VBox>

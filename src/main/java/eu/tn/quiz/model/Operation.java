@@ -11,6 +11,16 @@ public class Operation {
     private double resultat;
     private LocalDateTime dateOperation;
 
+    // ✅ Constructeur utilisé dans le Controller
+    public Operation(Integer utilisateurId, double nombre1, double nombre2, String operation, double resultat) {
+        this.utilisateurId = utilisateurId;
+        this.nombre1 = nombre1;
+        this.nombre2 = nombre2;
+        this.operation = operation;
+        this.resultat = resultat;
+        this.dateOperation = LocalDateTime.now(); // Date par défaut = maintenant
+    }
+
     public Operation() {
     }
 

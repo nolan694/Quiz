@@ -2,17 +2,46 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="eu.tn.quiz.controller.LoginController" prefWidth="400" prefHeight="250">
+<?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="eu.tn.quiz.controller.LoginController" prefWidth="400" prefHeight="300" style="-fx-background-color: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);">
     <children>
-        <Label text="Nom d'utilisateur :" layoutX="50" layoutY="50"/>
-        <TextField fx:id="usernameField" layoutX="180" layoutY="45" prefWidth="150"/>
+        <!-- Title -->
+        <Label text="Connexion" layoutX="150" layoutY="20" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3a4a6d;">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+            <effect>
+                <DropShadow color="rgba(0,0,0,0.1)" radius="5" spread="0.5" />
+            </effect>
+        </Label>
 
-        <Label text="Mot de passe :" layoutX="50" layoutY="100"/>
-        <PasswordField fx:id="passwordField" layoutX="180" layoutY="95" prefWidth="150"/>
+        <!-- Username Field -->
+        <Label text="Nom d'utilisateur :" layoutX="50" layoutY="70" style="-fx-font-size: 14px; -fx-text-fill: #3a4a6d;"/>
+        <TextField fx:id="usernameField" layoutX="180" layoutY="65" prefWidth="170" prefHeight="35" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #d1d9e6; -fx-border-width: 1.5; -fx-font-size: 14px;">
+            <effect>
+                <InnerShadow color="rgba(0,0,0,0.1)" radius="3" />
+            </effect>
+        </TextField>
 
-        <Button text="Se connecter" layoutX="150" layoutY="150" onAction="#handleLogin"/>
+        <!-- Password Field -->
+        <Label text="Mot de passe :" layoutX="50" layoutY="130" style="-fx-font-size: 14px; -fx-text-fill: #3a4a6d;"/>
+        <PasswordField fx:id="passwordField" layoutX="180" layoutY="125" prefWidth="170" prefHeight="35" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #d1d9e6; -fx-border-width: 1.5; -fx-font-size: 14px;">
+            <effect>
+                <InnerShadow color="rgba(0,0,0,0.1)" radius="3" />
+            </effect>
+        </PasswordField>
 
-        <Label fx:id="errorLabel" layoutX="100" layoutY="200" textFill="red"/>
+        <!-- Login Button -->
+        <Button text="Se connecter" layoutX="150" layoutY="190" prefWidth="100" prefHeight="40" onAction="#handleLogin" style="-fx-background-color: linear-gradient(to right, #4776E6, #8E54E9); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 20; -fx-border-radius: 20; -fx-cursor: hand;">
+            <effect>
+                <DropShadow color="rgba(71,118,230,0.5)" spread="0.3" />
+            </effect>
+        </Button>
+        <!-- Error Label -->
+        <Label fx:id="errorLabel" layoutX="50" layoutY="250" textFill="#e74c3c" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     </children>
 </AnchorPane>
